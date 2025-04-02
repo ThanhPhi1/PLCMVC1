@@ -1,0 +1,64 @@
+﻿@model plc.Models.plCa
+
+@{
+    ViewData["Title"] = "Thêm Cá Mới";
+}
+
+<h1>🐟 Thêm Cá Mới</h1>
+
+<form asp-action="Create" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="TenCa" class="control-label">Tên Cá</label>
+        <input asp-for="TenCa" class="form-control" />
+        <span asp-validation-for="TenCa" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MoTa" class="control-label">Mô Tả</label>
+        <textarea asp-for="MoTa" class="form-control"></textarea>
+        <span asp-validation-for="MoTa" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DanhGia" class="control-label">Đánh Giá (1-5)</label>
+        <input asp-for="DanhGia" class="form-control" type="number" step="0.1" min="1" max="5" />
+        <span asp-validation-for="DanhGia" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LoaiNuoc" class="control-label">Loại Nước</label>
+        <input asp-for="LoaiNuoc" class="form-control" />
+        <span asp-validation-for="LoaiNuoc" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="KichThuoc" class="control-label">Kích Thước (cm)</label>
+        <input asp-for="KichThuoc" class="form-control" type="number" />
+        <span asp-validation-for="KichThuoc" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MauSac" class="control-label">Màu Sắc</label>
+        <input asp-for="MauSac" class="form-control" />
+        <span asp-validation-for="MauSac" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ThoiGianSinhTon" class="control-label">Thời Gian Sống (năm)</label>
+        <input asp-for="ThoiGianSinhTon" class="form-control" type="number" />
+        <span asp-validation-for="ThoiGianSinhTon" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="HinhAnh" class="control-label">URL Hình Ảnh</label>
+        <input asp-for="HinhAnh" class="form-control" type="url" placeholder="Nhập URL hình ảnh" />
+        <span asp-validation-for="HinhAnh" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-primary">💾 Lưu</button>
+        <a asp-action="Index" class="btn btn-secondary">🔙 Quay Lại</a>
+    </div>
+</form>
